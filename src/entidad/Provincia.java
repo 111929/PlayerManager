@@ -24,9 +24,18 @@ public class Provincia {
         return provincia;
     }
 
+    public void setIdProvincia(int idProvincia) {
+        this.idProvincia = idProvincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+    
+
     @Override
     public String toString() {
-        return "Provincia{" + "idProvincia=" + idProvincia + ", provincia=" + provincia + '}';
+        return getProvincia();
     }
     
 }

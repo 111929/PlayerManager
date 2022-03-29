@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import entidad.Categoria;
+import entidad.Provincia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,12 +19,12 @@ import java.util.logging.Logger;
  *
  * @author dario
  */
-public class CategoriaController {
-          public CategoriaController() {
+public class ProvinciaController {
+          public ProvinciaController() {
            try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CategoriaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProvinciaController.class.getName()).log(Level.SEVERE, null, ex);
         }
            
     }
@@ -33,25 +33,25 @@ public class CategoriaController {
     private final String user = "sa";
     private final String pass = "123456";
     
-        public ArrayList<Categoria> obtenerCategoria() {
-        ArrayList<Categoria> lst = new ArrayList<>();
+    public ArrayList<Provincia> obtenerDepartamento() {
+        ArrayList<Provincia> lst = new ArrayList<>();
         ResultSet rs = null;
 
         try (Connection cnn = DriverManager.getConnection(url, user, pass);
-                PreparedStatement ps = cnn.prepareStatement("SELECT * FROM Divisiones ")) {
+                PreparedStatement ps = cnn.prepareStatement("select * from Provincias")) {
 
             rs = ps.executeQuery();
             while (rs.next()) {
-                int codigo = rs.getInt("idDivision");
-                String nombre = rs.getString("Categoria");
+                int provincia = rs.getInt("idProvincia");
+                String nombre = rs.getString("Nombre");
                
 
-                Categoria c = new Categoria();
-                c.setIdDivision(codigo);
-                c.setCategoria(nombre);
+                Provincia p = new Provincia();
+                p.setIdProvincia(provincia);
+                p.setProvincia(nombre);
               
 
-                lst.add(c);
+                lst.add(p);
             }
             rs.close();
             cnn.close();
