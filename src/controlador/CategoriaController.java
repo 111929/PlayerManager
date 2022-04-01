@@ -41,6 +41,10 @@ public class CategoriaController {
                 PreparedStatement ps = cnn.prepareStatement("SELECT * FROM Divisiones ")) {
 
             rs = ps.executeQuery();
+            Categoria  dat = new Categoria();
+            dat.setIdDivision(0);
+            dat.setCategoria("Selecciona la Division");
+            lst.add(dat);
             while (rs.next()) {
                 int codigo = rs.getInt("idDivision");
                 String nombre = rs.getString("Categoria");

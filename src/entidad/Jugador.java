@@ -24,7 +24,6 @@ public class Jugador {
     private String telefonoTutor;
     private String observaciones;
     private String fecheDeSeleccion;
-
     public Jugador() {
     }
 

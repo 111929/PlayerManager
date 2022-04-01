@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,14 +34,18 @@ public class ProvinciaController {
     private final String user = "sa";
     private final String pass = "123456";
     
-    public ArrayList<Provincia> obtenerDepartamento() {
-        ArrayList<Provincia> lst = new ArrayList<>();
+    public Vector<Provincia> obtenerDepartamento() {
+        Vector<Provincia> lst = new Vector<>();
         ResultSet rs = null;
 
         try (Connection cnn = DriverManager.getConnection(url, user, pass);
                 PreparedStatement ps = cnn.prepareStatement("select * from Provincias")) {
 
             rs = ps.executeQuery();
+            Provincia  dat = new Provincia();
+            dat.setIdProvincia(0);
+            dat.setProvincia("Selecciona la Provincia");
+            lst.add(dat);
             while (rs.next()) {
                 int provincia = rs.getInt("idProvincia");
                 String nombre = rs.getString("Nombre");

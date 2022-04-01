@@ -53,23 +53,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(78, 78, 78)
                 .addComponent(btnAutores)
-                .addGap(46, 46, 46)
+                .addGap(31, 31, 31)
                 .addComponent(btnLibros)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoresActionPerformed
-      
+       new VentanaRegistrarPreseleccion().setVisible(true);
       
     }//GEN-LAST:event_btnAutoresActionPerformed
 
     private void btnLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrosActionPerformed
-     
+     new VentanaListaJugadores().setVisible(true);
     }//GEN-LAST:event_btnLibrosActionPerformed
 
     /**
