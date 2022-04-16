@@ -3,62 +3,42 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidad;
+package DTO;
 
 /**
  *
  * @author dario
  */
-public class Jugador {
-    private int idJugador;
+public class JugadorDTO {
     private String nombre;
-    private String Apellido;
+    private String apellido;
     private String documento;
     private String fechaDeNacimiento;
-    private String fechaDePreSeleccion;
-    private String Posicion;
-    private Categoria division;
-    private Departamento departamento;
+    private String posicion;
+    private String division;
+    private String departamento;
+    private String provincia;
     private String direccion;
     private String telefono;
     private String telefonoTutor;
     private String observaciones;
-    private String fecheDeSeleccion;
-    public Jugador() {
+
+    public JugadorDTO() {
     }
 
-    public Jugador(int idJugador, String nombre, String Apellido, String documento, String fechaDeNacimiento, String fechaDePreSeleccion, String Posicion, Categoria division, Departamento departamento, String direccion, String telefono, String telefonoTutor, String observaciones, String fecheDeSeleccion) {
-        this.idJugador = idJugador;
+    public JugadorDTO(String nombre, String apellido, String documento, String fechaDeNacimiento, String fechaDePreSeleccion, String posicion, String division, String departamento, String provincia, String direccion, String telefono, String telefonoTutor, String observaciones) {
         this.nombre = nombre;
-        this.Apellido = Apellido;
+        this.apellido = apellido;
         this.documento = documento;
         this.fechaDeNacimiento = fechaDeNacimiento;
-        this.fechaDePreSeleccion = fechaDePreSeleccion;
-        this.Posicion = Posicion;
+        this.posicion = posicion;
         this.division = division;
         this.departamento = departamento;
+        this.provincia = provincia;
         this.direccion = direccion;
         this.telefono = telefono;
         this.telefonoTutor = telefonoTutor;
         this.observaciones = observaciones;
-        this.fecheDeSeleccion = fecheDeSeleccion;
-    }
-
-    public Jugador( String fecheDeSeleccion,String documento, int idJugador) {
-        this.idJugador = idJugador;
-        this.documento = documento;
-        this.fecheDeSeleccion = fecheDeSeleccion;
-    }
-
-
-
-
-    public int getIdJugador() {
-        return idJugador;
-    }
-
-    public void setIdJugador(int idJugador) {
-        this.idJugador = idJugador;
     }
 
     public String getNombre() {
@@ -70,11 +50,11 @@ public class Jugador {
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getDocumento() {
@@ -93,36 +73,37 @@ public class Jugador {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getFechaDePreSeleccion() {
-        return fechaDePreSeleccion;
-    }
-
-    public void setFechaDePreSeleccion(String fechaDePreSeleccion) {
-        this.fechaDePreSeleccion = fechaDePreSeleccion;
-    }
 
     public String getPosicion() {
-        return Posicion;
+        return posicion;
     }
 
-    public void setPosicion(String Posicion) {
-        this.Posicion = Posicion;
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
     }
 
-    public Categoria getDivision() {
+    public String getDivision() {
         return division;
     }
 
-    public void setDivision(Categoria division) {
+    public void setDivision(String division) {
         this.division = division;
     }
 
-    public Departamento getDepartamento() {
+    public String getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(Departamento departamento) {
+    public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
 
     public String getDireccion() {
@@ -157,17 +138,9 @@ public class Jugador {
         this.observaciones = observaciones;
     }
 
-    public String getFecheDeSeleccion() {
-        return fecheDeSeleccion;
-    }
-
-    public void setFecheDeSeleccion(String fecheDeSeleccion) {
-        this.fecheDeSeleccion = fecheDeSeleccion;
-    }
-
     @Override
     public String toString() {
-        return getNombre()+' '+ getApellido();
+        return "JugadorDTO{" + "nombre=" + nombre + ", apellido=" + apellido + ", documento=" + documento + ", fechaDeNacimiento=" + fechaDeNacimiento + " posicion=" + posicion + ", division=" + division + ", departamento=" + departamento + ", provincia=" + provincia + ", direccion=" + direccion + ", telefono=" + telefono + ", telefonoTutor=" + telefonoTutor + ", observaciones=" + observaciones + '}';
     }
-
+    
 }

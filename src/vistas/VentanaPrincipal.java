@@ -22,6 +22,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         btnAutores = new javax.swing.JButton();
         btnLibros = new javax.swing.JButton();
+        btnLibros1 = new javax.swing.JButton();
+        btnLibros2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,10 +34,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnLibros.setText("REPORTES");
+        btnLibros.setText("LISTA SELECCIONADOS");
         btnLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibrosActionPerformed(evt);
+            }
+        });
+
+        btnLibros1.setText("LISTA PRESELECCIONADOS");
+        btnLibros1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibros1ActionPerformed(evt);
+            }
+        });
+
+        btnLibros2.setText("SELECCIONAR JUGADOR");
+        btnLibros2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibros2ActionPerformed(evt);
             }
         });
 
@@ -47,17 +63,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(187, 187, 187)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnLibros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAutores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                .addContainerGap(224, Short.MAX_VALUE))
+                    .addComponent(btnAutores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLibros1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLibros2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(btnAutores)
-                .addGap(31, 31, 31)
+                .addGap(26, 26, 26)
+                .addComponent(btnLibros1)
+                .addGap(28, 28, 28)
+                .addComponent(btnLibros2)
+                .addGap(33, 33, 33)
                 .addComponent(btnLibros)
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         pack();
@@ -72,6 +94,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      new VentanaListaJugadores().setVisible(true);
     }//GEN-LAST:event_btnLibrosActionPerformed
 
+    private void btnLibros1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibros1ActionPerformed
+      new VentanaListarSeleccionado().setVisible(true);
+    }//GEN-LAST:event_btnLibros1ActionPerformed
+
+    private void btnLibros2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibros2ActionPerformed
+        new VentanaRegistrarSeleccionado().setVisible(true);
+                
+    }//GEN-LAST:event_btnLibros2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -80,5 +111,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAutores;
     private javax.swing.JButton btnLibros;
+    private javax.swing.JButton btnLibros1;
+    private javax.swing.JButton btnLibros2;
     // End of variables declaration//GEN-END:variables
 }

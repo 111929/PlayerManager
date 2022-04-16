@@ -281,7 +281,7 @@ public class VentanaRegistrarPreseleccion extends javax.swing.JFrame {
         String observaciones= txtObservaciones.getText();
         
         Jugador j= new Jugador(0, nombre, apellido, null,fechaDeNacimiento ,fechaPreSeleccion , posicion, categoria, departamento, direccion, telefono, telefonoTutor, observaciones,null);
-        jc.insertarContacto(j);
+        jc.insertarJugador(j);
         JOptionPane.showMessageDialog(this, "Jugador insertado correctamente");
         clean();
   
