@@ -38,7 +38,7 @@ public class VentanaRegistrarPreseleccion extends javax.swing.JFrame {
          pc= new ProvinciaController();
          cargarCombo();
          Provincia p= new Provincia();
-       DefaultComboBoxModel modeloProvincia = new DefaultComboBoxModel(pc.obtenerDepartamento());
+       DefaultComboBoxModel modeloProvincia = new DefaultComboBoxModel(pc.obtenerProvincia());
      cboProvincias.setModel(modeloProvincia);
          
     }

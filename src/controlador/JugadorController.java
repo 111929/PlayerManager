@@ -120,17 +120,18 @@ public class JugadorController {
         return lst;
 
     }
-      public ArrayList<JugadorDTO> obtenerJugadorSeleccionado() {
+      public ArrayList<JugadorDTO> obtenerJugadorSeleccionado(int idDepartamento) {
         ArrayList<JugadorDTO> lst = new ArrayList<>();
         ResultSet rs = null;
 
         try (Connection cnn = DriverManager.getConnection(url, user, pass);
-                PreparedStatement ps = cnn.prepareStatement("select j.Nombre 'Nombre' ,Apellido,Documento,FechaDeNacimiento,Posicion, d.Categoria 'Division', de.Departamento 'Departamento',\n" +
-"p.Nombre 'Provincia',Direccion,Telefono,TelefonoTutor, Observaciones\n" +
+                PreparedStatement ps = cnn.prepareStatement("select j.Nombre 'Nombre' ,Apellido,Documento,FechaDeNacimiento,Posicion, d.Categoria 'Division',\n" +
+"Direccion,Telefono,TelefonoTutor, Observaciones\n" +
 " from Jugadores j join Divisiones d on j.idDivision= d.idDivision join Departamentos de on de.idDepartamento= j.idDepartamento \n" +
 " join Provincias p on p.idProvincia= de.idProvincia\n" +
-"where Documento is not null")) {
-
+" where Documento is not null\n" +
+" and de.idDepartamento = ?")) {
+         ps.setInt(1, idDepartamento);
             rs = ps.executeQuery();     
             while (rs.next()) {
                 JugadorDTO dto = new JugadorDTO();
@@ -140,8 +141,8 @@ public class JugadorController {
               dto.setFechaDeNacimiento(rs.getString("FechaDeNacimiento"));
               dto.setPosicion(rs.getString("Posicion"));
               dto.setDivision(rs.getString("Division"));
-              dto.setDepartamento(rs.getString("Departamento"));
-              dto.setProvincia(rs.getString("Provincia"));
+            //  dto.setDepartamento(rs.getString("Departamento"));
+         //     dto.setProvincia(rs.getString("Provincia"));
               dto.setDireccion(rs.getString("Direccion"));
               dto.setTelefono(rs.getString("Telefono"));
               dto.setTelefonoTutor(rs.getString("TelefonoTutor"));

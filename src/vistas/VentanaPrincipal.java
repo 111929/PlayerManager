@@ -27,28 +27,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnAutores.setText("REGISTRO");
+        btnAutores.setText("REGISTRO PRE-SELECCION");
         btnAutores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAutoresActionPerformed(evt);
             }
         });
 
-        btnLibros.setText("LISTA SELECCIONADOS");
+        btnLibros.setText("LISTA PRE-SELECCIONADOS");
         btnLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibrosActionPerformed(evt);
             }
         });
 
-        btnLibros1.setText("LISTA PRESELECCIONADOS");
+        btnLibros1.setText("LISTA SELECCIONADOS");
         btnLibros1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibros1ActionPerformed(evt);
             }
         });
 
-        btnLibros2.setText("SELECCIONAR JUGADOR");
+        btnLibros2.setText("REGISTRO SELECCION");
         btnLibros2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibros2ActionPerformed(evt);
@@ -66,20 +66,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnAutores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLibros1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLibros2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(btnAutores)
-                .addGap(26, 26, 26)
-                .addComponent(btnLibros1)
-                .addGap(28, 28, 28)
-                .addComponent(btnLibros2)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnLibros)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLibros2)
+                .addGap(24, 24, 24)
+                .addComponent(btnLibros1)
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         pack();

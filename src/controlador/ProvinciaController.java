@@ -34,7 +34,7 @@ public class ProvinciaController {
     private final String user = "sa";
     private final String pass = "123456";
     
-    public Vector<Provincia> obtenerDepartamento() {
+    public Vector<Provincia> obtenerProvincia() {
         Vector<Provincia> lst = new Vector<>();
         ResultSet rs = null;
 
